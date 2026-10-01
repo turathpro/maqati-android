@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/accent" />
+
+    <LinearLayout
+        android:id="@+id/fallback"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp"
+        android:background="@color/bg"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/fallback_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📼 مقاطع"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:id="@+id/fallback_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="الخادم غير مُشغَّل بعد.\nافتح Termux مرة واحدة ليبدأ، ثم اضغط «أعد المحاولة»."
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:layout_marginBottom="22dp" />
+
+        <Button
+            android:id="@+id/btn_open_termux"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📟 فتح Termux"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/btn_retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔄 أعد المحاولة" />
+
+    </LinearLayout>
+
+</FrameLayout>
